@@ -26,7 +26,7 @@ export class Bird extends Component {
 
             this.animalIdx+=1;
             let nIdx =this.animalIdx %3;
-            console.log("new_sp",this.aniamlArr.length);
+            console.log("new_sp",nIdx);
 
             
             if(nIdx===0){

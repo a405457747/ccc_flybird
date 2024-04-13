@@ -1,27 +1,33 @@
-import { _decorator, Component, JsonAsset, Node, SpriteFrame } from 'cc';
+import { _decorator, Component, JsonAsset, Node, resources, SpriteFrame } from 'cc';
 import { DT } from './DT';
 const { ccclass, property } = _decorator;
 
+interface KI {
+
+}
+
 @ccclass('tempTest')
-export class tempTest extends Component {
+export class tempTest extends Component implements  KI{
 
     @property([SpriteFrame])
-    sps:SpriteFrame[]=[];
+    sps: SpriteFrame[] = [];
 
     @property([DT])
-    dts:DT[]=[];
+    dts: DT[] = [];
 
     @property([JsonAsset])
-    jsons:JsonAsset[]=[];
+    jsons: JsonAsset[] = [];
 
     start() {
-               for(let item in this.dts){
-                          console.log(this.dts[item].name);
-        }
+
+    }
+
+    chiji(){
+        console.log("chiji");
     }
 
     update(deltaTime: number) {
-        
+
     }
 }
 
