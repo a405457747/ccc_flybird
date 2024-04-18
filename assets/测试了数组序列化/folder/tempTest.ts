@@ -1,4 +1,4 @@
-import { _decorator, Component, JsonAsset, Node, resources, SpriteFrame } from 'cc';
+import { _decorator, Component, JsonAsset, Label, Node, resources, SpriteFrame } from 'cc';
 import { DT } from './DT';
 const { ccclass, property } = _decorator;
 
@@ -18,8 +18,12 @@ export class tempTest extends Component implements  KI{
     @property([JsonAsset])
     jsons: JsonAsset[] = [];
 
-    start() {
+    @property(Label)
+    ll:Label|null=null;
 
+    ff:number=0;
+    start() {
+        this.ff=0;
     }
 
     chiji(){
@@ -27,7 +31,9 @@ export class tempTest extends Component implements  KI{
     }
 
     update(deltaTime: number) {
-
+        this.ff+=deltaTime;
+        this.ll.string=this.ff+":";
+        debugger;
     }
 }
 
