@@ -4,9 +4,10 @@ const { ccclass, property } = _decorator;
 @ccclass('TT')
 export class TT extends Component {
     start() {
-        let k =new Map();
-        k.set('a',3);
-        console.log(k.get('a'));
+        let a=[3,2,1]
+        for(let [k,v] of a.entries()){
+            console.log(k+":"+v);
+        }
     }
 
     update(deltaTime: number) {
