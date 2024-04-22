@@ -1,13 +1,10 @@
-import { _decorator, Component, Node ,find, Sprite} from 'cc';
+import { _decorator, Component, Node ,find, Sprite,assetManager} from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('KK')
 export class KK extends Component {
     start() {
 
-        let n =new Node("h");
-        n.addComponent(Sprite);
-        find("Canvas").addChild(n);
     }
 
     update(deltaTime: number) {
