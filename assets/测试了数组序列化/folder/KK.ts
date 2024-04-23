@@ -1,4 +1,4 @@
-import { _decorator, Component, Node ,find, Sprite,assetManager, Prefab, instantiate} from 'cc';
+import { _decorator, Component, Vec3,Node ,find, Sprite,assetManager, Prefab, instantiate, tween} from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('KK')
@@ -8,9 +8,14 @@ export class KK extends Component {
     kk=null;
 
     start() {
-        let k2=instantiate(this.kk);
-    
-        find("Canvas").addChild(k2);
+        let tweenDuration:number =1.0;
+        tween(this.node.position)
+        .to(tweenDuration,new Vec3(0,10,0),{
+            onUpdate:(target:Vec3,ratio:number)=>{
+                this.node.position=target;
+                console.log("r",ratio);
+            }
+        }).start();
     }
 
     update(deltaTime: number) {
